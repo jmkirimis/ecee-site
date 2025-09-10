@@ -1,3 +1,5 @@
+'use client';
+
 export default function HeroSection() {
   return (
     <div
@@ -8,7 +10,10 @@ export default function HeroSection() {
       }
     >
       <div className="w-5xl flex items-start justify-end gap-5">
-        <button className="bg-[#0da596] p-3 rounded-xl font-semibold text-white">
+        <button 
+          className="bg-[#0da596] p-3 rounded-xl font-semibold text-white hover:bg-zinc-400 hover:cursor-pointer"
+          onClick={() => window.location.href = '/login'}
+        >
           Área do aluno
         </button>
       </div>
@@ -21,7 +26,7 @@ export default function HeroSection() {
           que o Cristo nos trouxe é de extrema importância para nossa evolução."
           Mar Shimoda
         </p>
-        <button className="bg-[#0da596] p-3 rounded-xl font-semibold text-white">
+        <button className="bg-[#0da596] p-3 rounded-xl font-semibold text-white hover:bg-zinc-400 hover:cursor-pointer">
           Inscrever-se
         </button>
         <iframe
