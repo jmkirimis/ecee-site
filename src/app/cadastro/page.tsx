@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Cookies from "js-cookie";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 export default function CadastroPage() {
@@ -20,7 +19,7 @@ export default function CadastroPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://ecee-api.onrender.com/user", {
+      const res = await fetch(`api/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +34,6 @@ export default function CadastroPage() {
       const result = await res.json();
 
       if (res.ok) {
-        await Cookies.set("token", result.access_token);
         alert("Cadastro realizado com sucesso! Espere a autorização dos admistradores para acessar o sistema.");
         window.location.href = "/login";
       } else {
